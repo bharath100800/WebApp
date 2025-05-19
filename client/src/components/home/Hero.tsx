@@ -46,8 +46,8 @@ const Hero = () => {
               <div className="absolute -top-4 -left-4 w-20 h-20 bg-secondary-500 rounded-full opacity-20 animate-pulse"></div>
               <div className="absolute -bottom-4 -right-4 w-32 h-32 bg-accent rounded-full opacity-20 animate-pulse delay-300"></div>
               <img 
-                src="https://images.unsplash.com/photo-1577467014381-aa7c94249633?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1350&h=900" 
-                alt="Homeopathic medicine and herbs - Colorful natural remedies" 
+                src="https://images.unsplash.com/photo-1567696153798-9fd2d48bea54?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1350&h=900" 
+                alt="Colorful bottles of essential oils and homeopathic remedies" 
                 className="rounded-2xl shadow-xl w-full h-auto relative z-10 pulse-effect"
               />
             </div>
