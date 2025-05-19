@@ -51,11 +51,20 @@ const Header = () => {
               </li>
               <li>
                 <Link 
-                  href="/#services" 
-                  className="transition hover:text-primary-600"
+                  href="/services" 
+                  className={`transition hover:text-primary-600 ${isActiveLink('/services') ? 'text-primary-700 font-medium' : ''}`}
                   onClick={() => setIsOpen(false)}
                 >
                   Services
+                </Link>
+              </li>
+              <li>
+                <Link 
+                  href="/professionals" 
+                  className={`transition hover:text-primary-600 ${isActiveLink('/professionals') ? 'text-primary-700 font-medium' : ''}`}
+                  onClick={() => setIsOpen(false)}
+                >
+                  Our Professionals
                 </Link>
               </li>
               <li>

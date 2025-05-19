@@ -12,12 +12,16 @@ import Blog from "@/pages/blog";
 import BlogPost from "@/pages/blog-post";
 import Contact from "@/pages/contact";
 import About from "@/pages/about";
+import Services from "@/pages/services";
+import Professionals from "@/pages/professionals";
 import NotFound from "@/pages/not-found";
 
 function Router() {
   return (
     <Switch>
       <Route path="/" component={Home} />
+      <Route path="/services" component={Services} />
+      <Route path="/professionals" component={Professionals} />
       <Route path="/appointment" component={Appointment} />
       <Route path="/blog" component={Blog} />
       <Route path="/blog/:id" component={BlogPost} />
