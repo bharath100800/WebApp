@@ -45,14 +45,35 @@ const Hero = () => {
             <div className="relative">
               <div className="absolute -top-4 -left-4 w-20 h-20 bg-secondary-500 rounded-full opacity-20 animate-pulse"></div>
               <div className="absolute -bottom-4 -right-4 w-32 h-32 bg-accent rounded-full opacity-20 animate-pulse delay-300"></div>
-              <div
-                className="rounded-2xl shadow-xl w-full h-[400px] bg-[url('https://plus.unsplash.com/premium_photo-1664304480784-a374341ee1be?q=80&w=1170&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D')] bg-cover bg-center relative z-10 pulse-effect"
-                style={{
-                  backgroundImage: "url('https://plus.unsplash.com/premium_photo-1664304480784-a374341ee1be?q=80&w=1170&auto=format&fit=crop&ixlib=rb-4.0.3')"
-                }}
-                role="img"
-                aria-label="Colorful homeopathic herbs and natural remedies"
-              ></div>
+              <div className="rounded-2xl shadow-xl w-full overflow-hidden relative z-10 pulse-effect">
+                <div className="aspect-[4/3] w-full relative">
+                  {/* Custom colorful homeopathic imagery */}
+                  <div className="absolute inset-0 bg-gradient-to-br from-emerald-400 via-teal-500 to-cyan-600"></div>
+                  
+                  {/* Decorative elements that look like bottles and herbs */}
+                  <div className="absolute top-1/4 left-1/4 w-16 h-32 bg-purple-400 rounded-full transform -rotate-12"></div>
+                  <div className="absolute top-1/3 left-1/2 w-12 h-24 bg-pink-400 rounded-full transform rotate-6"></div>
+                  <div className="absolute top-1/2 left-1/3 w-14 h-28 bg-amber-400 rounded-full transform rotate-12"></div>
+                  
+                  {/* Leaf-like shapes */}
+                  <div className="absolute bottom-1/4 right-1/4 w-24 h-20 bg-green-400 rounded-full transform -rotate-45"></div>
+                  <div className="absolute bottom-1/3 right-1/3 w-20 h-16 bg-lime-400 rounded-full transform rotate-30"></div>
+                  
+                  {/* Small circular details like drops or pills */}
+                  <div className="absolute top-1/4 right-1/4 w-8 h-8 bg-red-400 rounded-full"></div>
+                  <div className="absolute top-1/3 right-1/3 w-6 h-6 bg-yellow-400 rounded-full"></div>
+                  <div className="absolute bottom-1/4 left-1/5 w-10 h-10 bg-indigo-400 rounded-full"></div>
+                  <div className="absolute bottom-1/3 left-1/4 w-7 h-7 bg-orange-400 rounded-full"></div>
+                  
+                  {/* Overlay with slight transparency */}
+                  <div className="absolute inset-0 bg-white opacity-10"></div>
+                  
+                  {/* Text label */}
+                  <div className="absolute bottom-4 right-4 bg-white/80 backdrop-blur-sm py-2 px-4 rounded-lg text-primary-700 font-medium shadow-md">
+                    Homeopathic Remedies
+                  </div>
+                </div>
+              </div>
             </div>
           </div>
         </div>
