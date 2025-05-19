@@ -5,22 +5,30 @@ import { Skeleton } from "@/components/ui/skeleton";
 
 const TestimonialCard = ({ testimonial }: { testimonial: Testimonial }) => {
   return (
-    <div className="bg-white rounded-xl p-8 shadow-sm">
-      <div className="flex text-[#f59e0b] mb-4">
-        {[...Array(testimonial.rating)].map((_, i) => (
-          <Star key={i} className="h-5 w-5 fill-current" />
-        ))}
-      </div>
-      <p className="text-gray-600 mb-6">
-        "{testimonial.content}"
-      </p>
-      <div className="flex items-center">
-        <div className="bg-gray-200 w-12 h-12 rounded-full flex items-center justify-center text-gray-500 mr-4">
-          <User className="h-6 w-6" />
+    <div className="gradient-card rounded-xl p-8 shadow-md relative overflow-hidden group">
+      {/* Decorative elements */}
+      <div className="absolute -top-10 -right-10 w-20 h-20 bg-primary-100 rounded-full transition-transform duration-500 group-hover:scale-150"></div>
+      <div className="absolute -bottom-8 -left-8 w-16 h-16 bg-secondary-100 rounded-full transition-transform duration-500 group-hover:scale-150"></div>
+      
+      <div className="relative z-10">
+        <div className="flex text-accent mb-4">
+          {[...Array(testimonial.rating)].map((_, i) => (
+            <Star key={i} className="h-5 w-5 fill-current" />
+          ))}
         </div>
-        <div>
-          <h4 className="font-medium">{testimonial.name}</h4>
-          <p className="text-sm text-gray-500">{testimonial.role}</p>
+        <p className="text-gray-600 mb-6 relative">
+          <span className="text-5xl absolute -top-6 -left-2 opacity-20 text-primary-400">"</span>
+          <span className="relative">{testimonial.content}</span>
+          <span className="text-5xl absolute -bottom-10 -right-2 opacity-20 text-primary-400">"</span>
+        </p>
+        <div className="flex items-center">
+          <div className="bg-secondary-100 w-12 h-12 rounded-full flex items-center justify-center text-secondary-500 mr-4 shadow-sm">
+            <User className="h-6 w-6" />
+          </div>
+          <div>
+            <h4 className="font-medium text-primary-800">{testimonial.name}</h4>
+            <p className="text-sm text-primary-600">{testimonial.role}</p>
+          </div>
         </div>
       </div>
     </div>
