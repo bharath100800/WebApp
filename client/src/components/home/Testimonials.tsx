@@ -36,22 +36,27 @@ const TestimonialCard = ({ testimonial }: { testimonial: Testimonial }) => {
 };
 
 const TestimonialCardSkeleton = () => (
-  <div className="bg-white rounded-xl p-8 shadow-sm">
-    <div className="flex mb-4">
-      <Skeleton className="h-5 w-5 mr-1" />
-      <Skeleton className="h-5 w-5 mr-1" />
-      <Skeleton className="h-5 w-5 mr-1" />
-      <Skeleton className="h-5 w-5 mr-1" />
-      <Skeleton className="h-5 w-5" />
-    </div>
-    <Skeleton className="h-4 w-full mb-2" />
-    <Skeleton className="h-4 w-full mb-2" />
-    <Skeleton className="h-4 w-3/4 mb-6" />
-    <div className="flex items-center">
-      <Skeleton className="w-12 h-12 rounded-full mr-4" />
-      <div>
-        <Skeleton className="h-4 w-24 mb-2" />
-        <Skeleton className="h-3 w-32" />
+  <div className="gradient-card rounded-xl p-8 shadow-md relative overflow-hidden">
+    <div className="absolute -top-10 -right-10 w-20 h-20 bg-primary-100 rounded-full"></div>
+    <div className="absolute -bottom-8 -left-8 w-16 h-16 bg-secondary-100 rounded-full"></div>
+    
+    <div className="relative z-10">
+      <div className="flex mb-4">
+        <Skeleton className="h-5 w-5 mr-1" />
+        <Skeleton className="h-5 w-5 mr-1" />
+        <Skeleton className="h-5 w-5 mr-1" />
+        <Skeleton className="h-5 w-5 mr-1" />
+        <Skeleton className="h-5 w-5" />
+      </div>
+      <Skeleton className="h-4 w-full mb-2" />
+      <Skeleton className="h-4 w-full mb-2" />
+      <Skeleton className="h-4 w-3/4 mb-6" />
+      <div className="flex items-center">
+        <Skeleton className="w-12 h-12 rounded-full mr-4" />
+        <div>
+          <Skeleton className="h-4 w-24 mb-2" />
+          <Skeleton className="h-3 w-32" />
+        </div>
       </div>
     </div>
   </div>
@@ -63,10 +68,17 @@ const Testimonials = () => {
   });
 
   return (
-    <section className="py-16 bg-primary-50">
-      <div className="container mx-auto px-4">
+    <section className="py-16 bg-primary-50 relative overflow-hidden">
+      {/* Decorative background elements */}
+      <div className="absolute top-0 left-0 w-full h-full opacity-10 pointer-events-none overflow-hidden">
+        <div className="absolute top-1/3 left-1/6 w-64 h-64 bg-primary-300 rounded-full"></div>
+        <div className="absolute bottom-1/4 right-1/6 w-80 h-80 bg-secondary-300 rounded-full"></div>
+        <div className="absolute top-3/4 left-1/2 transform -translate-x-1/2 w-40 h-40 bg-accent/40 rounded-full"></div>
+      </div>
+
+      <div className="container mx-auto px-4 relative z-10">
         <div className="text-center mb-16">
-          <h2 className="text-3xl font-bold text-gray-900 font-heading mb-4">What Our Patients Say</h2>
+          <h2 className="text-3xl md:text-4xl font-bold gradient-text font-heading mb-4">What Our Patients Say</h2>
           <p className="text-lg text-gray-600 max-w-3xl mx-auto">
             Read about experiences from people who have benefited from our home healthcare services.
           </p>
@@ -79,8 +91,8 @@ const Testimonials = () => {
             ))}
           </div>
         ) : error ? (
-          <div className="text-center py-8">
-            <p className="text-red-500">Failed to load testimonials. Please try again later.</p>
+          <div className="text-center py-8 bg-white/80 backdrop-blur-sm rounded-xl p-6 max-w-lg mx-auto">
+            <p className="text-red-500 font-medium">Failed to load testimonials. Please try again later.</p>
           </div>
         ) : (
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8">

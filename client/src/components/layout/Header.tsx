@@ -16,19 +16,21 @@ const Header = () => {
   };
 
   return (
-    <header className="bg-white shadow-sm sticky top-0 z-50">
-      <div className="container mx-auto px-4 py-4">
+    <header className="bg-white shadow-md sticky top-0 z-50 border-b border-primary-100">
+      <div className="container mx-auto px-4 py-3">
         <nav className="flex flex-wrap items-center justify-between">
           <div className="flex items-center">
-            <Link href="/" className="flex items-center gap-2">
-              <HeartPulse className="text-primary-600 h-8 w-8" />
-              <span className="text-2xl font-bold font-heading text-primary-800">CarePlus</span>
+            <Link href="/" className="flex items-center gap-2 group">
+              <div className="bg-primary-50 p-2 rounded-full group-hover:bg-primary-100 transition-colors">
+                <HeartPulse className="text-primary-600 h-7 w-7" />
+              </div>
+              <span className="text-2xl font-bold gradient-text font-heading">CarePlus</span>
             </Link>
           </div>
           
           <button 
             onClick={toggleMenu} 
-            className="block md:hidden text-gray-700"
+            className="block md:hidden text-primary-700 hover:text-primary-900 transition-colors focus:outline-none focus:ring-2 focus:ring-primary-500 rounded-md p-1"
             aria-label={isOpen ? "Close menu" : "Open menu"}
           >
             {isOpen ? (
@@ -39,11 +41,11 @@ const Header = () => {
           </button>
           
           <div className={`${isOpen ? 'flex' : 'hidden'} md:flex flex-col md:flex-row w-full md:w-auto mt-4 md:mt-0`}>
-            <ul className="flex flex-col md:flex-row space-y-2 md:space-y-0 md:space-x-8 font-medium text-gray-600">
+            <ul className="flex flex-col md:flex-row space-y-2 md:space-y-0 md:space-x-6 font-medium text-gray-600">
               <li>
                 <Link 
                   href="/" 
-                  className={`transition hover:text-primary-600 ${isActiveLink('/') ? 'text-primary-700 font-medium' : ''}`}
+                  className={`transition-colors hover:text-primary-600 py-1 px-2 rounded-md inline-block ${isActiveLink('/') ? 'text-primary-700 font-medium bg-primary-50' : ''}`}
                   onClick={() => setIsOpen(false)}
                 >
                   Home
@@ -52,7 +54,7 @@ const Header = () => {
               <li>
                 <Link 
                   href="/services" 
-                  className={`transition hover:text-primary-600 ${isActiveLink('/services') ? 'text-primary-700 font-medium' : ''}`}
+                  className={`transition-colors hover:text-primary-600 py-1 px-2 rounded-md inline-block ${isActiveLink('/services') ? 'text-primary-700 font-medium bg-primary-50' : ''}`}
                   onClick={() => setIsOpen(false)}
                 >
                   Services
@@ -61,7 +63,7 @@ const Header = () => {
               <li>
                 <Link 
                   href="/professionals" 
-                  className={`transition hover:text-primary-600 ${isActiveLink('/professionals') ? 'text-primary-700 font-medium' : ''}`}
+                  className={`transition-colors hover:text-primary-600 py-1 px-2 rounded-md inline-block ${isActiveLink('/professionals') ? 'text-primary-700 font-medium bg-primary-50' : ''}`}
                   onClick={() => setIsOpen(false)}
                 >
                   Our Professionals
@@ -70,7 +72,7 @@ const Header = () => {
               <li>
                 <Link 
                   href="/appointment" 
-                  className={`transition hover:text-primary-600 ${isActiveLink('/appointment') ? 'text-primary-700 font-medium' : ''}`}
+                  className={`transition-colors hover:text-primary-600 py-1 px-2 rounded-md inline-block ${isActiveLink('/appointment') ? 'text-primary-700 font-medium bg-primary-50' : ''}`}
                   onClick={() => setIsOpen(false)}
                 >
                   Book Appointment
@@ -79,7 +81,7 @@ const Header = () => {
               <li>
                 <Link 
                   href="/blog" 
-                  className={`transition hover:text-primary-600 ${isActiveLink('/blog') ? 'text-primary-700 font-medium' : ''}`}
+                  className={`transition-colors hover:text-primary-600 py-1 px-2 rounded-md inline-block ${isActiveLink('/blog') ? 'text-primary-700 font-medium bg-primary-50' : ''}`}
                   onClick={() => setIsOpen(false)}
                 >
                   Blog
@@ -88,7 +90,7 @@ const Header = () => {
               <li>
                 <Link 
                   href="/about" 
-                  className={`transition hover:text-primary-600 ${isActiveLink('/about') ? 'text-primary-700 font-medium' : ''}`}
+                  className={`transition-colors hover:text-primary-600 py-1 px-2 rounded-md inline-block ${isActiveLink('/about') ? 'text-primary-700 font-medium bg-primary-50' : ''}`}
                   onClick={() => setIsOpen(false)}
                 >
                   About Us
@@ -97,15 +99,15 @@ const Header = () => {
               <li>
                 <Link 
                   href="/contact" 
-                  className={`transition hover:text-primary-600 ${isActiveLink('/contact') ? 'text-primary-700 font-medium' : ''}`}
+                  className={`transition-colors hover:text-primary-600 py-1 px-2 rounded-md inline-block ${isActiveLink('/contact') ? 'text-primary-700 font-medium bg-primary-50' : ''}`}
                   onClick={() => setIsOpen(false)}
                 >
                   Contact
                 </Link>
               </li>
             </ul>
-            <div className="mt-4 md:mt-0 md:ml-8">
-              <Button asChild>
+            <div className="mt-4 md:mt-0 md:ml-6">
+              <Button asChild className="bg-gradient-to-r from-primary-600 to-secondary-600 hover:from-primary-700 hover:to-secondary-700 transition-all btn-pulse">
                 <Link href="/appointment" onClick={() => setIsOpen(false)}>
                   Book Consultation
                 </Link>
