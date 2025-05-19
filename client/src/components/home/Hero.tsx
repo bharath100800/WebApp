@@ -45,11 +45,14 @@ const Hero = () => {
             <div className="relative">
               <div className="absolute -top-4 -left-4 w-20 h-20 bg-secondary-500 rounded-full opacity-20 animate-pulse"></div>
               <div className="absolute -bottom-4 -right-4 w-32 h-32 bg-accent rounded-full opacity-20 animate-pulse delay-300"></div>
-              <img 
-                src="https://images.unsplash.com/photo-1567696153798-9fd2d48bea54?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1350&h=900" 
-                alt="Colorful bottles of essential oils and homeopathic remedies" 
-                className="rounded-2xl shadow-xl w-full h-auto relative z-10 pulse-effect"
-              />
+              <div
+                className="rounded-2xl shadow-xl w-full h-[400px] bg-[url('https://plus.unsplash.com/premium_photo-1664304480784-a374341ee1be?q=80&w=1170&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D')] bg-cover bg-center relative z-10 pulse-effect"
+                style={{
+                  backgroundImage: "url('https://plus.unsplash.com/premium_photo-1664304480784-a374341ee1be?q=80&w=1170&auto=format&fit=crop&ixlib=rb-4.0.3')"
+                }}
+                role="img"
+                aria-label="Colorful homeopathic herbs and natural remedies"
+              ></div>
             </div>
           </div>
         </div>
